@@ -15,9 +15,9 @@ app = FastAPI()
 def log_message(message):
     logging.info(message)
 
-@app.get("/request-test/")
-def get_request_test():
-    return {"message": "Тестовый запрос"}
+@app.get("/request-test/{name}")
+def get_request_test(name: str):
+    return {f"message": "Вы передали имя {name}"}
 
 
 # def connect_to_database():
