@@ -15,10 +15,32 @@ app = FastAPI()
 def log_message(message):
     logging.info(message)
 
-@app.get("/request-test/{name}")
-def get_request_test(name: str):
-    return {f"message": "Вы передали имя {name}"}
+@app.get("/request-test/")
+def get_request_test():
+    return {"Успешно"}
 
+
+@app.get("/get-nomenclature-description/{name}")
+def get_nomenclature_description(name: str, keywords: str = Query(None)):
+
+    try:
+        description = name + keywords
+        return {"message": description}
+
+    except Exception as e:
+        log_message(f"Ошибка при передаче данных: {str(e)}")
+        return None
+
+@app.get("/get-nomenclature-image/{name}")
+def get_nomenclature_description(name: str, keywords: str = Query(None)):
+
+    try:
+        description = name + keywords
+        return {"message": description}
+
+    except Exception as e:
+        log_message(f"Ошибка при передаче данных: {str(e)}")
+        return None
 
 # def connect_to_database():
 #     try:
