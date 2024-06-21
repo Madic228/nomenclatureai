@@ -15,9 +15,9 @@ app = FastAPI()
 def log_message(message):
     logging.info(message)
 
-@app.get("/request-test/{name}")
-def get_request_test(name: str):
-    return {"Вы передали имя": name}
+@app.get("/request-test/")
+def get_request_test():
+    return {"Успешно"}
 
 
 @app.get("/get-nomenclature-description/{name}")
