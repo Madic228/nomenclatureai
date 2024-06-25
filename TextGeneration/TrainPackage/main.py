@@ -128,3 +128,81 @@ print(answer.json()['choices'][0]['message']['content'])
 from IPython.display import display, Markdown
 
 display(Markdown(answer.json()['choices'][0]['message']['content']))
+
+import requests
+import json
+
+def send_chat_request(giga_token, user_message):
+    """
+    Отправляет POST-запрос к API GigaChat для получения ответа от модели чата.
+
+    Параметры:
+    - giga_token (str): Токен авторизации для доступа к API GigaChat.
+    - user_message (str): Сообщение пользователя, которое будет обработано моделью GigaChat.
+
+    Возвращает:
+    - str: Строка сгенерированного ответа GigaChat с тэгом img
+    """
+    # URL API для отправки запросов к GigaChat
+    url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
+
+    # Заголовки для HTTP-запроса
+    headers = {
+        'Content-Type': 'application/json',  # Указываем, что отправляемые данные в формате JSON
+        'Authorization': f'Bearer {giga_token}',  # Используем токен авторизации для доступа к API
+    }
+
+    # Данные для отправки в теле запроса
+    payload = {
+        "model": "GigaChat:latest",  # Указываем, что хотим использовать последнюю версию модели GigaChat
+        "messages": [
+            {
+                "role": "user",  # Роль отправителя - пользователь
+                "content": user_message  # Сообщение от пользователя
+            },
+        ],
+        "temperature": 0.7  # Устанавливаем температуру, чтобы управлять случайностью ответов
+    }
+
+    try:
+        # Отправляем POST-запрос к API и получаем ответ
+        response = requests.post(url, headers=headers, data=json.dumps(payload), verify=False)
+        # Выводим текст ответа. В реальных условиях следует обрабатывать ответ и проверять статус коды.
+        print(response.json())
+        return response.json()["choices"][0]["message"]["content"]
+    except requests.RequestException as e:
+        # В случае возникновения исключения в процессе выполнения запроса, выводим ошибку
+        print(f"Произошла ошибка: {str(e)}")
+        return None
+
+user_message = "Нарисуй фотореалистичное изображение антропоморфного робота с \
+ноутбуком в руках"
+response_img_tag = send_chat_request(giga_token, user_message)
+print(response_img_tag)
+
+from bs4 import BeautifulSoup
+
+
+
+# Парсим HTML
+soup = BeautifulSoup(response_img_tag, 'html.parser')
+
+# Извлекаем значение атрибута `src`
+img_src = soup.img['src']
+
+print(img_src)
+
+import requests
+
+headers = {
+    'Content-Type': 'application/json',
+    'Authorization': f'Bearer {giga_token}',
+}
+
+response = requests.get(f'https://gigachat.devices.sberbank.ru/api/v1/files/{img_src}/content', headers=headers,
+                        verify=False)
+
+
+
+with open('image.jpg', 'wb') as f:
+    f.write(response.content)

@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="Скрытие ключей доступа с помощью .env">
+    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="ProductDescriptionGenerator.py - класс для генерации описания товаров/номенклатуры">
+      <change afterPath="$PROJECT_DIR$/TextGeneration/TrainPackage/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TextGeneration/TrainPackage/product_description.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TextGeneration/TrainPackage/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TextGeneration/UnitOfMeasurementGenerator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TextGeneration/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextGeneration/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TextGeneration/ProductDescriptionGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextGeneration/ProductDescriptionGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TextGeneration/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TextGeneration/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextGeneration/TrainPackage/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,15 +38,90 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.ProductDescriptionGenerator.executor": "Run",
+    "Python.UnitOfMeasurementGenerator.executor": "Run",
+    "Python.__init__.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\giric\Music\3 курс 1 семестр\Python\nomenclatureai\TextGeneration\TrainPackage" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.UnitOfMeasurementGenerator">
+    <configuration name="ProductDescriptionGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="nomenclatureai" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TextGeneration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TextGeneration/ProductDescriptionGenerator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UnitOfMeasurementGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="nomenclatureai" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TextGeneration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TextGeneration/UnitOfMeasurementGenerator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="nomenclatureai" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TextGeneration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\giric\Music\3 курс 1 семестр\Python\nomenclatureai\TextGeneration\__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="nomenclatureai" />
       <option name="ENV_FILES" value="" />
@@ -54,7 +135,29 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TextGeneration/main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\giric\Music\3 курс 1 семестр\Python\nomenclatureai\TextGeneration\TrainPackage\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="nomenclatureai" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TextGeneration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\giric\Music\3 курс 1 семестр\Python\nomenclatureai\TextGeneration\TrainPackage\test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -65,7 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.UnitOfMeasurementGenerator" />
+        <item itemvalue="Python.ProductDescriptionGenerator" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.__init__" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +240,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718986735510</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Обновление main.py в textgeneration">
+      <option name="closed" value="true" />
+      <created>1719302416217</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719302416217</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ProductDescriptionGenerator.py - класс для генерации описания товаров/номенклатуры">
+      <option name="closed" value="true" />
+      <created>1719312938476</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719312938476</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +276,8 @@
     <MESSAGE value="initial commit 3" />
     <MESSAGE value="Создание файла main.py в TextGeneration" />
     <MESSAGE value="Скрытие ключей доступа с помощью .env" />
-    <option name="LAST_COMMIT_MESSAGE" value="Скрытие ключей доступа с помощью .env" />
+    <MESSAGE value="Обновление main.py в textgeneration" />
+    <MESSAGE value="ProductDescriptionGenerator.py - класс для генерации описания товаров/номенклатуры" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProductDescriptionGenerator.py - класс для генерации описания товаров/номенклатуры" />
   </component>
 </project>

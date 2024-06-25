@@ -1,0 +1,13 @@
+
+input_variables: [product_name, category, key_words]
+output_parser: null
+messages:
+  - role: system
+    prompt:
+      template: 'Ты - нейросеть.'
+  - role: user
+    prompt:
+      template: 'Название товара: {product_name}. Ключевые слова: {key_words}.'
+template_format: f-string
+_type: chat
+    

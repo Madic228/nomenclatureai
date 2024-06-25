@@ -45,8 +45,12 @@ class ProductDescriptionGenerator:
 
 # Пример использования класса
 generator = ProductDescriptionGenerator()
-product_names = ["Шоколад Милка", "Чай Lipton"]
-keywords = ["Вкус", "Качество"]
+product_names = ["Пылесос мобиль ", "Соковыжималка МАЛО"] # Можно передать несколько товаров/номенклатур
+keywords = ['Надежность', 'качество'] # Не обязательное поле Ключевые слова
 descriptions = generator.generate_description(product_names, keywords=keywords)
 for description in descriptions:
     print(description)
+
+# Вывод описания для отдельной номенклатуры. Необходимо при генерации несколькхи описаний
+# print(descriptions[0])
+# print(descriptions[1])
