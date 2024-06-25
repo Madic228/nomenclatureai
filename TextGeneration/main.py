@@ -1,9 +1,8 @@
 from decouple import config
+
 client_id = config('client_id', default='')
 secret = config('secret', default='')
 auth = config('auth', default='')
-
-
 
 
 import requests
