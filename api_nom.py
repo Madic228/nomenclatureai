@@ -35,10 +35,10 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
     descriptions = generator.generate_description(product_names, keywords=keywords)
      # Modify the return statement to structure the JSON response
     structured_descriptions = []
-    
+
     for description in enumerate(descriptions):
         structured_descriptions.append({
-            "description": description  # Include description
+            "description": description[1]  # Include description
         })
 
     return {"descriptions": structured_descriptions}  # Return structured JSON
