@@ -31,7 +31,8 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
 
     generator = ProductDescriptionGenerator()
     product_names = name.split(",") # Можно передать несколько товаров/номенклатур
-    keywords = keywords.split(",") # Не обязательное поле Ключевые слова
+    if len(keywords) != 0:
+        keywords = keywords.split(",") # Не обязательное поле Ключевые слова
     descriptions = generator.generate_description(product_names, keywords=keywords)
      # Modify the return statement to structure the JSON response
     structured_descriptions = []
