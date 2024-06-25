@@ -8,6 +8,10 @@ from concurrent.futures import ThreadPoolExecutor
 from fastapi.responses import FileResponse
 from TextGeneration import ProductDescriptionGenerator
 from TextGeneration.UnitOfMeasurementGenerator import UnitOfMeasurementGenerator
+from decouple import config
+from langchain.schema import HumanMessage, SystemMessage
+from langchain_community.chat_models.gigachat import GigaChat
+
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -30,8 +34,7 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
         product_names = name # Можно передать несколько товаров/номенклатур
         keywords = keywords # Не обязательное поле Ключевые слова
         descriptions = generator.generate_description(product_names, keywords=keywords)
-        for description in descriptions:
-            return {"description": description}
+        return {"description": descriptions}
 
     except Exception as e:
         log_message(f"Ошибка при передаче данных: {str(e)}")
