@@ -6,7 +6,7 @@ from io import BytesIO
 import logging
 from concurrent.futures import ThreadPoolExecutor
 from fastapi.responses import FileResponse
-from TextGeneration import ProductDescriptionGenerator
+from TextGeneration.ProductDescriptionGenerator import ProductDescriptionGenerator
 from TextGeneration.UnitOfMeasurementGenerator import UnitOfMeasurementGenerator
 from decouple import config
 from langchain.schema import HumanMessage, SystemMessage
