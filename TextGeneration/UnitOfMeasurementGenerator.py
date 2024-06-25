@@ -32,9 +32,9 @@ class UnitOfMeasurementGenerator:
 
         return units_of_measurement
 
-# Пример использования
-generator = UnitOfMeasurementGenerator()
-product_names = ["Вода", "Мука", "Молоко", 'подшибники', 'Коферка BOSTON']
-units_of_measurement = generator.generate_units_of_measurement(product_names)
-for unit in units_of_measurement:
-    print(unit)
+# # Пример использования
+# generator = UnitOfMeasurementGenerator()
+# product_names = ["Вода", "Мука", "Молоко", 'подшибники', 'Коферка BOSTON']
+# units_of_measurement = generator.generate_units_of_measurement(product_names)
+# for unit in units_of_measurement:
+#     print(unit)
