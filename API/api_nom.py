@@ -6,6 +6,8 @@ from io import BytesIO
 import logging
 from concurrent.futures import ThreadPoolExecutor
 from fastapi.responses import FileResponse
+from TextGeneration.ProductDescriptionGenerator import ProductDescriptionGenerator
+from TextGeneration.UnitOfMeasurementGenerator import UnitOfMeasurementGenerator
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -24,8 +26,12 @@ def get_request_test():
 def get_nomenclature_description(name: str, keywords: str = Query(None)):
 
     try:
-        description = name + keywords
-        return {"message": description}
+        generator = ProductDescriptionGenerator()
+        product_names = name # Можно передать несколько товаров/номенклатур
+        keywords = keywords # Не обязательное поле Ключевые слова
+        descriptions = generator.generate_description(product_names, keywords=keywords)
+        for description in descriptions:
+            return {"description": description}
 
     except Exception as e:
         log_message(f"Ошибка при передаче данных: {str(e)}")
