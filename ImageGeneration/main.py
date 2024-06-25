@@ -1,11 +1,9 @@
-from decouple import config
-client_id = config('CLIENT_ID', default='')
-secret = config('SECRET', default='')
-auth = config('AUTH', default='')
-
-
-import requests
+import json
 import uuid
+import requests
+from bs4 import BeautifulSoup
+
+auth = "ZGEzMDdlZWYtZGFjYi00OWY2LWFkNDMtODg5NWM0MDRjZTFjOjI3MDUyMWIyLTE3ZjctNGJhMy1iNWY2LWUxNTRmODdmNTBmNg=="
 
 def get_token(auth_token, scope='GIGACHAT_API_PERS'):
     """
@@ -46,84 +44,75 @@ def get_token(auth_token, scope='GIGACHAT_API_PERS'):
         print(f"Ошибка: {str(e)}")
         return -1
 
+
 response = get_token(auth)
 if response != 1:
-  print(response.text)
-  giga_token = response.json()['access_token']
+    print(response.text)
+    giga_token = response.json()['access_token']
 
-import requests
-
-url = "https://gigachat.devices.sberbank.ru/api/v1/models"
-
-payload={}
-headers = {
-  'Accept': 'application/json',
-  'Authorization': f'Bearer {giga_token}'
-}
-
-response = requests.request("GET", url, headers=headers, data=payload, verify=False)
-
-print(response.text)
-
-import requests
-import json
-
-
-def get_chat_completion(auth_token, user_message):
+def send_chat_request(giga_token, user_message):
     """
-    Отправляет POST-запрос к API чата для получения ответа от модели GigaChat.
+    Отправляет POST-запрос к API GigaChat для получения ответа от модели чата.
 
     Параметры:
-    - auth_token (str): Токен для авторизации в API.
-    - user_message (str): Сообщение от пользователя, для которого нужно получить ответ.
+    - giga_token (str): Токен авторизации для доступа к API GigaChat.
+    - user_message (str): Сообщение пользователя, которое будет обработано моделью GigaChat.
 
     Возвращает:
-    - str: Ответ от API в виде текстовой строки.
+    - str: Строка сгенерированного ответа GigaChat с тэгом img
     """
-    # URL API, к которому мы обращаемся
+    # URL API для отправки запросов к GigaChat
     url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
 
-    # Подготовка данных запроса в формате JSON
-    payload = json.dumps({
-        "model": "GigaChat",  # Используемая модель
-        "messages": [
-            {
-                "role": "user",  # Роль отправителя (пользователь)
-                "content": user_message  # Содержание сообщения
-            }
-        ],
-        "temperature": 0.9,  # Температура генерации
-        "top_p": 0.1,  # Параметр top_p для контроля разнообразия ответов
-        "n": 1,  # Количество возвращаемых ответов
-        "stream": False,  # Потоковая ли передача ответов
-        "max_tokens": 512,  # Максимальное количество токенов в ответе
-        "repetition_penalty": 1,  # Штраф за повторения
-        "update_interval": 0  # Интервал обновления (для потоковой передачи)
-    })
-
-    # Заголовки запроса
+    # Заголовки для HTTP-запроса
     headers = {
-        'Content-Type': 'application/json',  # Тип содержимого - JSON
-        'Accept': 'application/json',  # Принимаем ответ в формате JSON
-        'Authorization': f'Bearer {auth_token}'  # Токен авторизации
+        'Content-Type': 'application/json',  # Указываем, что отправляемые данные в формате JSON
+        'Authorization': f'Bearer {giga_token}',  # Используем токен авторизации для доступа к API
     }
 
-    # Выполнение POST-запроса и возвращение ответа
+    # Данные для отправки в теле запроса
+    payload = {
+        "model": "GigaChat:latest",  # Указываем, что хотим использовать последнюю версию модели GigaChat
+        "messages": [
+            {
+                "role": "user",  # Роль отправителя - пользователь
+                "content": user_message  # Сообщение от пользователя
+            },
+        ],
+        "function_call": "auto",
+    }
+
     try:
-        response = requests.request("POST", url, headers=headers, data=payload, verify=False)
-        return response
+        # Отправляем POST-запрос к API и получаем ответ
+        response = requests.post(url, headers=headers, data=json.dumps(payload), verify=False)
+        # Выводим текст ответа. В реальных условиях следует обрабатывать ответ и проверять статус коды.
+        print(response.json())
+        return response.json()["choices"][0]["message"]["content"]
     except requests.RequestException as e:
-        # Обработка исключения в случае ошибки запроса
+        # В случае возникновения исключения в процессе выполнения запроса, выводим ошибку
         print(f"Произошла ошибка: {str(e)}")
-        return -1
+        return None
 
 
-answer = get_chat_completion(giga_token, 'Сгенерируй описание для номенклатуры (Шоколад Милка, молочный, 200 грамм, клубника со сливками). Описание должно развернутым, на один большой абзац, испольщуй меньше тофтологии')
+user_message = "Нарисуй шоколадную плитку с названием Milka, реальное фото"
+response_img_tag = send_chat_request(giga_token, user_message)
+print(response_img_tag)
 
-answer.json()
+# Парсим HTML
+soup = BeautifulSoup(response_img_tag, 'html.parser')
 
-print(answer.json()['choices'][0]['message']['content'])
+# Извлекаем значение атрибута `src`
+img_src = soup.img['src']
 
-from IPython.display import display, Markdown
+print(img_src)
 
-display(Markdown(answer.json()['choices'][0]['message']['content']))
+headers = {
+    'Content-Type': 'application/json',
+    'Authorization': f'Bearer {giga_token}',
+}
+
+response = requests.get(f'https://gigachat.devices.sberbank.ru/api/v1/files/{img_src}/content', headers=headers,
+                        verify=False)
+
+with open('image.jpg', 'wb') as f:
+    f.write(response.content)
