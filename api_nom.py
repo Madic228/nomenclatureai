@@ -6,6 +6,12 @@ from io import BytesIO
 import logging
 from concurrent.futures import ThreadPoolExecutor
 from fastapi.responses import FileResponse
+from TextGeneration.ProductDescriptionGenerator import ProductDescriptionGenerator
+from TextGeneration.UnitOfMeasurementGenerator import UnitOfMeasurementGenerator
+from decouple import config
+from langchain.schema import HumanMessage, SystemMessage
+from langchain_community.chat_models.gigachat import GigaChat
+
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -23,13 +29,11 @@ def get_request_test():
 @app.get("/get-nomenclature-description/{name}")
 def get_nomenclature_description(name: str, keywords: str = Query(None)):
 
-    try:
-        description = name + keywords
-        return {"message": description}
-
-    except Exception as e:
-        log_message(f"Ошибка при передаче данных: {str(e)}")
-        return None
+    generator = ProductDescriptionGenerator()
+    product_names = name # Можно передать несколько товаров/номенклатур
+    keywords = keywords # Не обязательное поле Ключевые слова
+    descriptions = generator.generate_description(product_names, keywords=keywords)
+    return {"description": descriptions}
 
 @app.get("/get-nomenclature-image/{name}")
 def get_nomenclature_description(name: str, keywords: str = Query(None)):
