@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="ProductDescriptionGenerator.py - класс для генерации описания товаров/номенклатуры">
-      <change afterPath="$PROJECT_DIR$/TextGeneration/TrainPackage/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TextGeneration/TrainPackage/product_description.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TextGeneration/TrainPackage/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TextGeneration/UnitOfMeasurementGenerator.py" afterDir="false" />
+    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="UnitOfMeasurementGenerator - класс для генерации единиц измерения товаров/номенклатуры">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TextGeneration/ProductDescriptionGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextGeneration/ProductDescriptionGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TextGeneration/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TextGeneration/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextGeneration/TrainPackage/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,18 +32,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.ProductDescriptionGenerator.executor": "Run",
-    "Python.UnitOfMeasurementGenerator.executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.ProductDescriptionGenerator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.UnitOfMeasurementGenerator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\giric\Music\3 курс 1 семестр\Python\nomenclatureai\TextGeneration\TrainPackage" />
@@ -256,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719312938476</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="UnitOfMeasurementGenerator - класс для генерации единиц измерения товаров/номенклатуры">
+      <option name="closed" value="true" />
+      <created>1719313842338</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719313842338</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,6 +280,7 @@
     <MESSAGE value="Скрытие ключей доступа с помощью .env" />
     <MESSAGE value="Обновление main.py в textgeneration" />
     <MESSAGE value="ProductDescriptionGenerator.py - класс для генерации описания товаров/номенклатуры" />
-    <option name="LAST_COMMIT_MESSAGE" value="ProductDescriptionGenerator.py - класс для генерации описания товаров/номенклатуры" />
+    <MESSAGE value="UnitOfMeasurementGenerator - класс для генерации единиц измерения товаров/номенклатуры" />
+    <option name="LAST_COMMIT_MESSAGE" value="UnitOfMeasurementGenerator - класс для генерации единиц измерения товаров/номенклатуры" />
   </component>
 </project>

@@ -5,8 +5,6 @@ from langchain_community.chat_models.gigachat import GigaChat
 class ProductDescriptionGenerator:
     def __init__(self):
         # Получение данных из файла конфигурации
-        self.client_id = config('client_id', default='')
-        self.secret = config('secret', default='')
         self.auth = config('auth', default='')
         # Инициализация GigaChat с указанием credentials
         self.giga = GigaChat(credentials=self.auth,
