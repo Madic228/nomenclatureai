@@ -9,8 +9,6 @@ from fastapi.responses import FileResponse
 from TextGeneration.ProductDescriptionGenerator import ProductDescriptionGenerator
 from TextGeneration.UnitOfMeasurementGenerator import UnitOfMeasurementGenerator
 from ImageGeneration.main import ProductImageGeneration
-from ImageGeneration.main import GigaChatClient
-from ImageGeneration.main import TokenManager
 from decouple import config
 from langchain.schema import HumanMessage, SystemMessage
 from langchain_community.chat_models.gigachat import GigaChat
