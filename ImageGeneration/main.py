@@ -150,10 +150,10 @@ class ProductImageGeneration:
         return base64_images
 
 
-# Запуск основной функции и получение результатов
-giga_chat_service = ProductImageGeneration()
-base64_images = giga_chat_service.run()
-if base64_images:
-    for user_message, base64_image in base64_images:
-        print(f"Request: {user_message}")
-        print(f"Base64: {base64_image}")
+# # Запуск основной функции и получение результатов
+# giga_chat_service = ProductImageGeneration()
+# base64_images = giga_chat_service.run()
+# if base64_images:
+#     for user_message, base64_image in base64_images:
+#         print(f"Request: {user_message}")
+#         print(f"Base64: {base64_image}")
