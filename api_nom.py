@@ -8,6 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from fastapi.responses import FileResponse
 from TextGeneration.ProductDescriptionGenerator import ProductDescriptionGenerator
 from TextGeneration.UnitOfMeasurementGenerator import UnitOfMeasurementGenerator
+from ImageGeneration.main import ProductImageGeneration
 from decouple import config
 from langchain.schema import HumanMessage, SystemMessage
 from langchain_community.chat_models.gigachat import GigaChat
@@ -38,8 +39,7 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
     structured_descriptions = []
 
     for index, desc in enumerate(descriptions):
-        a = "\""
-        new_desc = desc.replace(a, '')  # Modify the description (not the tuple)
+        new_desc = desc.replace("\"", '')  # Modify the description (not the tuple)
         structured_descriptions.append({
             "description": new_desc
         })
@@ -49,13 +49,9 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
 @app.get("/get-nomenclature-image/{name}")
 def get_nomenclature_description(name: str, keywords: str = Query(None)):
 
-    try:
-        description = name + keywords
-        return {"message": description}
-
-    except Exception as e:
-        log_message(f"Ошибка при передаче данных: {str(e)}")
-        return None
+    giga_chat_service = ProductImageGeneration()
+    base64_images = giga_chat_service.run()
+    return base64_images
 
 @app.get("/get-nomenclature-measurement/{name}")
 def get_nomenclature_description(name: str):
