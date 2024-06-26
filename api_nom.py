@@ -48,8 +48,9 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
 
 @app.get("/get-nomenclature-image/{name}")
 def get_nomenclature_description(name: str):
+    product_name = name
     giga_chat_service = ProductImageGeneration()
-    base64_images = giga_chat_service.run()
+    base64_images = giga_chat_service.run(product_name)
     return base64_images
 
 @app.get("/get-nomenclature-measurement/{name}")
