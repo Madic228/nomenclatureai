@@ -1,11 +1,11 @@
-# from decouple import config
+from decouple import config
 from langchain.schema import HumanMessage, SystemMessage
 from langchain_community.chat_models.gigachat import GigaChat
 
 class ProductDescriptionGenerator:
     def __init__(self):
         # Получение данных из файла конфигурации
-        self.auth = "NTdlOGY2NWEtODY5OS00M2I3LWE3MmEtMGQyNzQ5MDEzNThhOmI4MjZhMzZmLWIwMDEtNDkzYi05MzhkLTZmMmZlOGY1YTYwZA=="
+        self.auth = config('auth', default='')
         # Инициализация GigaChat с указанием credentials
         self.giga = GigaChat(credentials=self.auth,
                              model='GigaChat:latest',

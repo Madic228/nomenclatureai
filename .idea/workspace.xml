@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="Исправление импортов и ошибок в генеративных файлах">
+    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="Исправление дропа апишки 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -274,7 +274,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719321892421</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Исправление дропа апишки">
+      <option name="closed" value="true" />
+      <created>1719423115645</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719423115645</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Исправление дропа апишки 2">
+      <option name="closed" value="true" />
+      <created>1719423322981</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719423322981</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,6 +315,8 @@
     <MESSAGE value="UnitOfMeasurementGenerator - класс для генерации единиц измерения товаров/номенклатуры" />
     <MESSAGE value="Исправление ProductDescriptionGenerator" />
     <MESSAGE value="Исправление импортов и ошибок в генеративных файлах" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправление импортов и ошибок в генеративных файлах" />
+    <MESSAGE value="Исправление дропа апишки" />
+    <MESSAGE value="Исправление дропа апишки 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправление дропа апишки 2" />
   </component>
 </project>
