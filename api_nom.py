@@ -37,10 +37,10 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
      # Modify the return statement to structure the JSON response
     structured_descriptions = []
 
-    for description in enumerate(descriptions):
-        description[1] = description[1].replace('\\','')
+    for index, desc in enumerate(descriptions):
+        new_desc = desc.replace('\\', '')  # Modify the description (not the tuple)
         structured_descriptions.append({
-            "description": description[1]  # Include description
+            "description": new_desc
         })
 
     return {"descriptions": structured_descriptions}  # Return structured JSON
