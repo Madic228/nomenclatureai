@@ -2,7 +2,7 @@ import json
 import uuid
 import requests
 from bs4 import BeautifulSoup
-from decouple import config
+# from decouple import config
 import base64
 
 class TokenManager:
