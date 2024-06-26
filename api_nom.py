@@ -30,10 +30,19 @@ def get_request_test():
 def get_nomenclature_description(name: str, keywords: str = Query(None)):
 
     generator = ProductDescriptionGenerator()
-    product_names = name # Можно передать несколько товаров/номенклатур
-    keywords = keywords # Не обязательное поле Ключевые слова
+    product_names = name.split(",") # Можно передать несколько товаров/номенклатур
+    if keywords is not None:
+        keywords = keywords.split(",") # Не обязательное поле Ключевые слова
     descriptions = generator.generate_description(product_names, keywords=keywords)
-    return {"description": descriptions}
+     # Modify the return statement to structure the JSON response
+    structured_descriptions = []
+
+    for description in enumerate(descriptions):
+        structured_descriptions.append({
+            "description": description[1]  # Include description
+        })
+
+    return {"descriptions": structured_descriptions}  # Return structured JSON
 
 @app.get("/get-nomenclature-image/{name}")
 def get_nomenclature_description(name: str, keywords: str = Query(None)):
@@ -45,6 +54,14 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
     except Exception as e:
         log_message(f"Ошибка при передаче данных: {str(e)}")
         return None
+
+@app.get("/get-nomenclature-measurement/{name}")
+def get_nomenclature_description(name: str):
+
+    generator = UnitOfMeasurementGenerator()
+    product_names = name.split(",")
+    units_of_measurement = generator.generate_units_of_measurement(product_names)
+    return {"measurement": units_of_measurement}
 
 # def connect_to_database():
 #     try:
