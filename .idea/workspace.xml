@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="Исправление ProductDescriptionGenerator">
+    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="Исправление импортов и ошибок в генеративных файлах">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TextGeneration/ProductDescriptionGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextGeneration/ProductDescriptionGenerator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +34,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Python.ProductDescriptionGenerator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TestGeneration.executor&quot;: &quot;Run&quot;,
     &quot;Python.UnitOfMeasurementGenerator.executor&quot;: &quot;Run&quot;,
     &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
@@ -266,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719321580645</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Исправление импортов и ошибок в генеративных файлах">
+      <option name="closed" value="true" />
+      <created>1719321892421</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1719321892421</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +298,7 @@
     <MESSAGE value="ProductDescriptionGenerator.py - класс для генерации описания товаров/номенклатуры" />
     <MESSAGE value="UnitOfMeasurementGenerator - класс для генерации единиц измерения товаров/номенклатуры" />
     <MESSAGE value="Исправление ProductDescriptionGenerator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправление ProductDescriptionGenerator" />
+    <MESSAGE value="Исправление импортов и ошибок в генеративных файлах" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправление импортов и ошибок в генеративных файлах" />
   </component>
 </project>

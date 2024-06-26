@@ -5,7 +5,7 @@ from langchain_community.chat_models.gigachat import GigaChat
 class ProductDescriptionGenerator:
     def __init__(self):
         # Получение данных из файла конфигурации
-        self.auth = config('auth', default='')
+        self.auth = "NTdlOGY2NWEtODY5OS00M2I3LWE3MmEtMGQyNzQ5MDEzNThhOmI4MjZhMzZmLWIwMDEtNDkzYi05MzhkLTZmMmZlOGY1YTYwZA=="
         # Инициализация GigaChat с указанием credentials
         self.giga = GigaChat(credentials=self.auth,
                              model='GigaChat:latest',

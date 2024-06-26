@@ -5,7 +5,8 @@ from langchain_community.chat_models.gigachat import GigaChat
 class UnitOfMeasurementGenerator:
     def __init__(self):
         # Инициализация GigaChat для генерации единиц измерения
-        self.auth = config('auth', default='')
+        # self.auth = config('auth', default='')
+        self.auth = "NTdlOGY2NWEtODY5OS00M2I3LWE3MmEtMGQyNzQ5MDEzNThhOmI4MjZhMzZmLWIwMDEtNDkzYi05MzhkLTZmMmZlOGY1YTYwZA=="
         self.giga = GigaChat(credentials=self.auth,
                              model='GigaChat:latest',
                              verify_ssl_certs=False)

@@ -118,7 +118,8 @@ class GigaChatClient:
 
 class ProductImageGeneration:
     def __init__(self):
-        auth = config('AUTH', default='')
+        auth = "NTdlOGY2NWEtODY5OS00M2I3LWE3MmEtMGQyNzQ5MDEzNThhOmI4MjZhMzZmLWIwMDEtNDkzYi05MzhkLTZmMmZlOGY1YTYwZA=="
+        # auth = config('AUTH', default='')
         self.token_manager = TokenManager(auth)
         self.token_manager.get_token()
         self.giga_chat_client = GigaChatClient(self.token_manager) if self.token_manager.giga_token else None
