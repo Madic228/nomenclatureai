@@ -48,10 +48,10 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
 
 @app.get("/get-nomenclature-image/{name}")
 def get_nomenclature_description(name: str):
-
-    giga_chat_service = ProductImageGeneration()
-    base64_images = giga_chat_service.run()
-    return base64_images
+    return {"Успешно"}
+    #giga_chat_service = ProductImageGeneration()
+    #base64_images = giga_chat_service.run()
+    #return base64_images
 
 @app.get("/get-nomenclature-measurement/{name}")
 def get_nomenclature_description(name: str):
