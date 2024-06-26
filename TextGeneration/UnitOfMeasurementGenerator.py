@@ -1,4 +1,5 @@
 from decouple import config
+from gigachat.exceptions import AuthenticationError
 from langchain.schema import HumanMessage, SystemMessage
 from langchain_community.chat_models.gigachat import GigaChat
 
@@ -25,9 +26,15 @@ class UnitOfMeasurementGenerator:
                 content=f'''Название товара: {product_name}.
                            Укажи единицу измерения для этой номенклатуры. Верни только ЕДИНИЦУ ИЗМЕРЕНИЯ И НИЧЕГО БОЛЕЕ'''
             )
-
-            # Запрос генерации единицы измерения у GigaChat
-            response = self.giga([system_message, human_message])
+            try:
+                response = self.giga([system_message, human_message])
+            except AuthenticationError as e:
+                # Если произошла ошибка аутентификации, обновите токен и повторите запрос
+                self.auth = config('auth', default='')
+                self.giga = GigaChat(credentials=self.auth,
+                                     model='GigaChat:latest',
+                                     verify_ssl_certs=False)
+                response = self.giga([system_message, human_message])
             units_of_measurement.append(response.content)
 
         return units_of_measurement
