@@ -38,7 +38,7 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
     structured_descriptions = []
 
     for index, desc in enumerate(descriptions):
-        new_desc = desc.replace('\\', '')  # Modify the description (not the tuple)
+        new_desc = desc.replace(" ", '')  # Modify the description (not the tuple)
         structured_descriptions.append({
             "description": new_desc
         })
