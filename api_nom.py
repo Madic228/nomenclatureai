@@ -9,6 +9,8 @@ from fastapi.responses import FileResponse
 from TextGeneration.ProductDescriptionGenerator import ProductDescriptionGenerator
 from TextGeneration.UnitOfMeasurementGenerator import UnitOfMeasurementGenerator
 from ImageGeneration.main import ProductImageGeneration
+from ImageGeneration.main import GigaChatClient
+from ImageGeneration.main import TokenManager
 from decouple import config
 from langchain.schema import HumanMessage, SystemMessage
 from langchain_community.chat_models.gigachat import GigaChat
@@ -47,7 +49,7 @@ def get_nomenclature_description(name: str, keywords: str = Query(None)):
     return {"descriptions": structured_descriptions}  # Return structured JSON
 
 @app.get("/get-nomenclature-image/{name}")
-def get_nomenclature_description(name: str, keywords: str = Query(None)):
+def get_nomenclature_description(name: str):
 
     giga_chat_service = ProductImageGeneration()
     base64_images = giga_chat_service.run()
