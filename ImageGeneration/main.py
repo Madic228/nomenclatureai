@@ -129,10 +129,10 @@ class ProductImageGeneration:
             return None
 
         product_names = [
-            "Нарисуй молоко",
-            "Нарисуй молоко",
-            "Нарисуй молоко",
-            "Нарисуй молоко"
+            product_name,
+            product_name,
+            product_name,
+            product_name
         ]
 
         base64_images = []
