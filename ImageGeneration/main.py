@@ -128,11 +128,12 @@ class ProductImageGeneration:
             print("Не удалось получить токен.")
             return None
 
+        pr = f"Нарисуй {product_name}"
         product_names = [
-            "Нарисуй молоко",
-            "Нарисуй молоко",
-            "Нарисуй молоко",
-            "Нарисуй молоко"
+            pr,
+            pr,
+            pr,
+            pr
         ]
 
         base64_images = []
