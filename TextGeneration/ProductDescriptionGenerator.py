@@ -5,15 +5,15 @@ from langchain_community.chat_models.gigachat import GigaChat
 
 class ProductDescriptionGenerator:
     def __init__(self):
-        # Получение данных из файла конфигурации
+        self._initialize_gigachat()
+
+    def _initialize_gigachat(self):
         self.auth = config('auth', default='')
-        # Инициализация GigaChat с указанием credentials
         self.giga = GigaChat(credentials=self.auth,
                              model='GigaChat:latest',
                              verify_ssl_certs=False)
 
     def generate_description(self, product_names, keywords=None):
-        # Определение сообщений для генерации описания товара
         system_message = SystemMessage(
             content='''Ты - опытный составитель описаний для справочника номенклатуры в 1С УТ 11.
                  Твоя задача -  создать полное и информативное описание товара,
@@ -37,18 +37,15 @@ class ProductDescriptionGenerator:
             try:
                 response = self.giga([system_message, human_message])
             except AuthenticationError as e:
-                # Если произошла ошибка аутентификации, обновите токен и повторите запрос
-                self.auth = config('auth', default='')
-                self.giga = GigaChat(credentials=self.auth,
-                                     model='GigaChat:latest',
-                                     verify_ssl_certs=False)
+                # Обработка ошибки аутентификации
+                self._initialize_gigachat()  # Переинициализация GigaChat с новыми учетными данными
                 response = self.giga([system_message, human_message])
 
             descriptions.append(response.content)
 
         return descriptions
 
-# # Пример использования класса
+# Пример использования класса
 # generator = ProductDescriptionGenerator()
 # product_names = ["Пылесос мобиль ", "Соковыжималка МАЛО"] # Можно передать несколько товаров/номенклатур
 # keywords = ['Надежность', 'качество'] # Не обязательное поле Ключевые слова
