@@ -151,7 +151,7 @@ class ProductImageGeneration:
         return base64_images
 
 
-# # Запуск основной функции и получение результатов
+# Запуск основной функции и получение результатов
 # giga_chat_service = ProductImageGeneration()
 # base64_images = giga_chat_service.run()
 # if base64_images:

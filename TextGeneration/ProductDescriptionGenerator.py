@@ -8,7 +8,8 @@ class ProductDescriptionGenerator:
         self._initialize_gigachat()
 
     def _initialize_gigachat(self):
-        self.auth = config('auth', default='')
+        # self.auth = config('AUTH', default='')
+        self.auth = "NTdlOGY2NWEtODY5OS00M2I3LWE3MmEtMGQyNzQ5MDEzNThhOmI4MjZhMzZmLWIwMDEtNDkzYi05MzhkLTZmMmZlOGY1YTYwZA=="
         self.giga = GigaChat(credentials=self.auth,
                              model='GigaChat:latest',
                              verify_ssl_certs=False)
