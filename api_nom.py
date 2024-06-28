@@ -8,6 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from fastapi.responses import FileResponse
 from TextGeneration.ProductDescriptionGenerator import ProductDescriptionGenerator
 from TextGeneration.UnitOfMeasurementGenerator import UnitOfMeasurementGenerator
+from ImageGeneration.main import ProductImageGeneration
 from decouple import config
 from langchain.schema import HumanMessage, SystemMessage
 from langchain_community.chat_models.gigachat import GigaChat
@@ -23,44 +24,53 @@ def log_message(message):
 
 @app.get("/request-test/")
 def get_request_test():
+    log_message("Запрос /request-test выполнен успешно")
     return {"Успешно"}
 
 
 @app.get("/get-nomenclature-description/{name}")
 def get_nomenclature_description(name: str, keywords: str = Query(None)):
+    log_message(f"Получен запрос на описание номенклатуры для имени: {name} с ключевыми словами: {keywords}")
 
     generator = ProductDescriptionGenerator()
-    product_names = name.split(",") # Можно передать несколько товаров/номенклатур
+    product_names = name.split("|") # Можно передать несколько товаров/номенклатур
     if keywords is not None:
-        keywords = keywords.split(",") # Не обязательное поле Ключевые слова
+        keywords = keywords.split("|") # Не обязательное поле Ключевые слова
     descriptions = generator.generate_description(product_names, keywords=keywords)
-     # Modify the return statement to structure the JSON response
-    structured_descriptions = []
 
-    for description in enumerate(descriptions):
+     # Формирование структуры JSON-ответа
+    structured_descriptions = []
+    for index, desc in enumerate(descriptions):
+        new_desc = desc.replace("\"", '')    # Изменение описания (не кортежа)
         structured_descriptions.append({
-            "description": description[1]  # Include description
+            "description": new_desc
         })
 
-    return {"descriptions": structured_descriptions}  # Return structured JSON
+    log_message(f"Описание номенклатуры сгенерировано: {structured_descriptions}")
+    return {"descriptions": structured_descriptions}  # Возврат структурированного JSON
 
 @app.get("/get-nomenclature-image/{name}")
-def get_nomenclature_description(name: str, keywords: str = Query(None)):
+def get_nomenclature_description(name: str):
+    log_message(f"Получен запрос на изображение номенклатуры для имени: {name}")
 
-    try:
-        description = name + keywords
-        return {"message": description}
+    product_name = name
+    giga_chat_service = ProductImageGeneration()
+    base64_images = giga_chat_service.run(product_name)
 
-    except Exception as e:
-        log_message(f"Ошибка при передаче данных: {str(e)}")
-        return None
+    log_message(f"Изображения номенклатуры сгенерированы: {base64_images}")
+    return base64_images
 
 @app.get("/get-nomenclature-measurement/{name}")
 def get_nomenclature_description(name: str):
+    logging.info(f"Received request to get measurement for name: {name}")
 
     generator = UnitOfMeasurementGenerator()
-    product_names = name.split(",")
+    product_names = name.split("|")
+    logging.info(f"Product names: {product_names}")
+
     units_of_measurement = generator.generate_units_of_measurement(product_names)
+    logging.info(f"Generated units of measurement: {units_of_measurement}")
+
     return {"measurement": units_of_measurement}
 
 # def connect_to_database():

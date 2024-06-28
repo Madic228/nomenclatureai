@@ -123,16 +123,17 @@ class ProductImageGeneration:
         self.token_manager.get_token()
         self.giga_chat_client = GigaChatClient(self.token_manager) if self.token_manager.giga_token else None
 
-    def run(self):
+    def run(self, product_name):
         if not self.giga_chat_client:
             print("Не удалось получить токен.")
             return None
 
+        pr = f"Нарисуй {product_name}"
         product_names = [
-            "Нарисуй деревенское сливочное масло",
-            "Нарисуй деревенское сливочное масло",
-            "Нарисуй деревенское сливочное масло",
-            "Нарисуй деревенское сливочное масло"
+            pr,
+            pr,
+            pr,
+            pr
         ]
 
         base64_images = []
