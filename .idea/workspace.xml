@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="Исправление ошибки аутентификации 1">
+    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="Исправление ошибки аутентификации 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneration/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TextGeneration/UnitOfMeasurementGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextGeneration/UnitOfMeasurementGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_nom.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_nom.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,7 @@
       <recent name="C:\Users\giric\Music\3 курс 1 семестр\Python\nomenclatureai\TextGeneration\TrainPackage" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ProductDescriptionGenerator">
+  <component name="RunManager" selected="Python.UnitOfMeasurementGenerator">
     <configuration name="ProductDescriptionGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="nomenclatureai" />
       <option name="ENV_FILES" value="" />
@@ -170,8 +168,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ProductDescriptionGenerator" />
         <item itemvalue="Python.UnitOfMeasurementGenerator" />
+        <item itemvalue="Python.ProductDescriptionGenerator" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.TestGeneration" />
         <item itemvalue="Python.main" />
@@ -322,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719511924920</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Исправление ошибки аутентификации 2">
+      <option name="closed" value="true" />
+      <created>1719567793862</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1719567793862</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -352,6 +358,7 @@
     <MESSAGE value="Исправление дропа апишки 3" />
     <MESSAGE value="Исправление ошибки истичения токена" />
     <MESSAGE value="Исправление ошибки аутентификации 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправление ошибки аутентификации 1" />
+    <MESSAGE value="Исправление ошибки аутентификации 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправление ошибки аутентификации 2" />
   </component>
 </project>
