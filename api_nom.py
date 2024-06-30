@@ -57,7 +57,7 @@ def get_nomenclature_description(name: str):
     giga_chat_service = ProductImageGeneration()
     base64_images = giga_chat_service.run(product_name)
 
-    log_message(f"Изображения номенклатуры сгенерированы: {base64_images}")
+    log_message(f"Изображения номенклатуры сгенерированы")
     return base64_images
 
 @app.get("/get-nomenclature-measurement/{name}")
