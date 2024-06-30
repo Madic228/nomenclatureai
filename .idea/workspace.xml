@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="Исправление ошибки аутентификации 2">
+    <list default="true" id="f1981388-b257-4d6d-a5cb-9c26195963fc" name="Changes" comment="Исправление определения едениц измерения языковой моделью">
+      <change afterPath="$PROJECT_DIR$/TextGeneration/NomenclatureDuplicateFinder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TextGeneration/UnitOfMeasurementGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextGeneration/UnitOfMeasurementGenerator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,21 +32,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.ProductDescriptionGenerator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TestGeneration.executor&quot;: &quot;Run&quot;,
-    &quot;Python.UnitOfMeasurementGenerator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/giric/Music/3 курс 1 семестр/Python/nomenclatureai/ImageGeneration&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.NomenclatureDuplicateFinder.executor": "Run",
+    "Python.ProductDescriptionGenerator.executor": "Run",
+    "Python.TestGeneration.executor": "Run",
+    "Python.UnitOfMeasurementGenerator.executor": "Run",
+    "Python.__init__.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/giric/Music/3 курс 1 семестр/Python/nomenclatureai/ImageGeneration",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\giric\Music\3 курс 1 семестр\Python\nomenclatureai\ImageGeneration" />
@@ -55,7 +56,29 @@
       <recent name="C:\Users\giric\Music\3 курс 1 семестр\Python\nomenclatureai\TextGeneration\TrainPackage" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.UnitOfMeasurementGenerator">
+  <component name="RunManager" selected="Python.NomenclatureDuplicateFinder">
+    <configuration name="NomenclatureDuplicateFinder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="nomenclatureai" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TextGeneration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TextGeneration/NomenclatureDuplicateFinder.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ProductDescriptionGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="nomenclatureai" />
       <option name="ENV_FILES" value="" />
@@ -144,35 +167,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="nomenclatureai" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TextGeneration" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\giric\Music\3 курс 1 семестр\Python\nomenclatureai\TextGeneration\TrainPackage\main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.NomenclatureDuplicateFinder" />
         <item itemvalue="Python.UnitOfMeasurementGenerator" />
         <item itemvalue="Python.ProductDescriptionGenerator" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.TestGeneration" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -328,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719567793862</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Исправление определения едениц измерения языковой моделью">
+      <option name="closed" value="true" />
+      <created>1719659871040</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1719659871040</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,6 +368,7 @@
     <MESSAGE value="Исправление ошибки истичения токена" />
     <MESSAGE value="Исправление ошибки аутентификации 1" />
     <MESSAGE value="Исправление ошибки аутентификации 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправление ошибки аутентификации 2" />
+    <MESSAGE value="Исправление определения едениц измерения языковой моделью" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправление определения едениц измерения языковой моделью" />
   </component>
 </project>
