@@ -124,11 +124,11 @@ class ProductImageGeneration:
 
         return base64_images
 
-# Запуск основной функции и получение результатов
-giga_chat_service = ProductImageGeneration()
-product_name = "деревенское сливочное масло"
-base64_images = giga_chat_service.run(product_name)
-if base64_images:
-    for user_message, base64_image in base64_images:
-        print(f"Запрос: {user_message} \n Изображение закодировано.")
-        # print(f"Кодировка: {base64_image}")
+# # Запуск основной функции и получение результатов
+# giga_chat_service = ProductImageGeneration()
+# product_name = "деревенское сливочное масло"
+# base64_images = giga_chat_service.run(product_name)
+# if base64_images:
+#     for user_message, base64_image in base64_images:
+#         print(f"Запрос: {user_message} \n Изображение закодировано.")
+#         # print(f"Кодировка: {base64_image}")
